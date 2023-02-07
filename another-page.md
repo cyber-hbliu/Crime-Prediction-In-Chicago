@@ -50,7 +50,7 @@ from sklearn.preprocessing import StandardScaler, PolynomialFeatures, OneHotEnco
 from sklearn.neighbors import NearestNeighbors
 ```
 
-## Header 2
+## Reference
 
 > LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
 
