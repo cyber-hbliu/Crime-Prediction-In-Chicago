@@ -27,9 +27,15 @@ This project is divided into five parts.
 - **Part 5** - Evaluation: validate errors and examine the performance of the model
 
 
-## Part 1 - What exactly exists
+# Part 1 - What Exactly Exists
 
-## Part 2 - Community-based perspective
+# Part 2 - Community-based Perspective
+
+# Part 3 - Crime Spatial Patterns
+
+# Part 4 - A New Predictive Try
+
+# Part 5 - Examine Errors
 
 
 Here are some packages used in this project, click [this page](./another-page.html) to check out.
