@@ -27,6 +27,11 @@ This project is divided into five parts.
 - **Part 5** - Evaluation: validate errors and examine the performance of the model
 
 
+## Part 1 - What exactly exists
+
+## Part 2 - Community-based perspective
+
+
 Here are some packages used in this project, click [this page](./another-page.html) to check out.
 
 # Example: Embedding Altair & Hvplot Charts
