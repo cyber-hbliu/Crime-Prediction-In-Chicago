@@ -27,7 +27,7 @@ This project is divided into five parts.
 - **Part 5** - Evaluation: validate errors and examine the performance of the model
 
 
-For examples of how to use markdown to style text, see this [this page](./another-page.html).
+Here are some packages used in this project, click [this page](./another-page.html) to check out.
 
 # Example: Embedding Altair & Hvplot Charts
 
