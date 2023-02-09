@@ -38,6 +38,7 @@ The project is broken down into five parts:
 4. `Predictive Modeling` of Crime Count: This section focuses on predicting the crime rate of the city.
 5. `Evaluation`: In this final stage, the performance of the model will be evaluated and errors will be validated.
 
+---
 
 # What Exactly Exists
 The raw data used in this project consists of crime records from 2015 to 2019 obtained from the Chicago Data Portal. With a total of 1303648 records, the dataset provides detailed information on the primary type of crime, the crime's description, its location, and other relevant police information, such as community, time, district, and more.
@@ -50,6 +51,7 @@ The dataset was grouped by communities and sorted to create a new dataset of cri
 
 
 ---
+
 # Community-based Perspective
 
 ### Plotly Charts
