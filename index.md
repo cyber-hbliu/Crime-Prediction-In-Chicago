@@ -50,7 +50,9 @@ The dataset was grouped by communities and sorted to create a new dataset of cri
 
 
 
-# Community-based Perspective |
+# Community-based Perspective
+
+### Plotly Charts |
 
 Additionally, the charts provide insight into the most common location and time of occurrence for each type of crime. For example, it appears that theft is most commonly recorded at street locations, while battery and assault are most commonly recorded at residential locations. The charts also show the trend of crime occurrence over time, indicating that crime rates may vary depending on the season and month of the year.
 
