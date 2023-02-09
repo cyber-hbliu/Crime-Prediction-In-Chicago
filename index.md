@@ -58,8 +58,6 @@ Additionally, the charts provide insight into the most common location and time 
 
 In terms of district, it can be seen that some districts have higher crime rates compared to others. For example, some districts may have a higher rate of theft, while others may have a higher rate of battery. By examining the distribution of crime events across the different districts, police departments can allocate resources more effectively to areas with higher crime rates.
 
-In conclusion, the exploratory analysis provides valuable insights into the nature of crime in Chicago. By visualizing the crime data, it becomes easier to identify patterns, trends, and relationships between different variables. This information can help police departments make data-driven decisions for crime prevention and reduction efforts.
-
 `Plotly.express` and `altair` packages have been used here to create corresponding interactive charts. These charts show that theft, battery, criminal damage, assault, other offense, deceptive practice, narcotics, burglary, motor vehicle theft, and robbery topped the list of crimes with criminal records. 
 
 <div id="px-chart-1"></div>
@@ -89,7 +87,7 @@ However, when it comes to community security, some communities have been experie
 Similarly, the day of the week heatmap allows us to understand the crime trend over the week. The chart shows that crimes are more likely to occur in the daytime, such as offenses involving children. some crimes are more likely to occur in the night, especially criminal sexual assault. This information is valuable for both the police and the community, as they can prepare accordingly.
 <div id="heatmap-3"></div>
 
-In conclusion, the data visualization provides a comprehensive understanding of the crime trends in Chicago, including the type, location, district, community, and time of crime occurrence. This information can be used to enhance community safety, allocate resources effectively, and design efficient and effective crime prevention strategies.
+In conclusion, the exploratory analysis provides valuable insights into the nature of crime in Chicago. By visualizing the crime data, it becomes easier to identify patterns, trends, and relationships between different variables. This information can help police departments make data-driven decisions for crime prevention and reduction efforts.
 
 # Crime Spatial Patterns
 
