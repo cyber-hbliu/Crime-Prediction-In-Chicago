@@ -23,63 +23,62 @@ toc_sticky: true
 
 # Introduction
 
-Chicago is a city with rich history and cultural heritage. However, the city is also encroached upon by crime. 
+Chicago is a city steeped in rich history and cultural heritage. Unfortunately, it is also plagued by crime. Ensuring the safety of its citizens is a persistent challenge that law enforcement agencies are continually trying to tackle.
 
-Social security is a constant problem that affects the lives of its citizens. Understanding crime, predicting it, and preventing it have become something that police departments want to do. As in the movie Minority Report, a "prophet" predicts crimes before they happen. Nevertheless, reality is not a science fiction movie, and Crime prediction is a complex problem because many random human factors are involved. The specifics of how crime is committed vary depending on the type of society and community.
+Social safety is a constant problem that affects the lives of its citizens. Understanding crime, predicting it, and preventing it have become something that police departments want to do. As in the movie Minority Report, a "prophet" predicts crimes before they happen. Nevertheless, reality is not a science fiction movie, and crime prediction is a complex problem because many random human factors are involved. The specifics of how crime is committed vary depending on the type of society and community.
 
 In 2022, Victor Rotaru, Yi Huang, Timmy Li, James Evans, and Ishanu Chattopadhyay developed a new algorithm to predict urban crime at the individual event level a week or more in advance, enabling model-based simulations that reveal both the pattern of reported infractions and the pattern of corresponding police enforcement. Meanwhile, in 2021, Suhong Kim, Param Joshi, Parminder Singh Kalsi, and Pooya Taheri et al. implemented a machine learning prediction model to predict crime in Vancouver.
 
 Like the above studies, in this exercise, I attempted to use machine learning to predict crime rates in Chicago by analyzing data from previous crimes records. The prediction model also includes social factors that may affect crime rates. The overall crime rate of a city is calculated by dividing the total number of crimes submitted by police agencies in the city by the city's population and multiplying the result by 100,000.
 
-This project is divided into five parts.
-- **Part 1** - `Data wrangling`: clean, join, merge, and transform the crime dataset
-- **Part 2** - `Exploratory Analysis`: check out the crime trending with a community-based perspective on crime type, location, time series, arrest rate, and domestic violence rate
-- **Part 3** - `Feature Engineering`: examine the spatial patterns of crime, analyze the density of different types of crimes, analyze the `clustering` of crime events, use `KNN algorithm` to capture the similarity, and classify the distance between crime sites to and nearby feature points
-- **Part 4** - Predictive Modeling of Crime Count: predict the crime rate of the city 
-- **Part 5** - Evaluation: validate errors and examine the performance of the model
+The project is broken down into five parts:
+1. `Data wrangling`: This involves cleaning, joining, merging, and transforming the crime dataset.
+2. `Exploratory Analysis`: In this section, the crime trend will be analyzed from a community-based perspective, taking into account the type of crime, location, time series, arrest rate, and domestic violence rate.
+3. `Feature Engineering`: This involves analyzing the spatial patterns of crime, examining the `density` of different types of crimes, `clustering` crime events, using `KNN algorithms` to capture similarities, and classifying the distance between crime sites and nearby feature points.
+4. `Predictive Modeling` of Crime Count: This section focuses on predicting the crime rate of the city.
+5. `Evaluation`: In this final stage, the performance of the model will be evaluated and errors will be validated.
 
 
 # What Exactly Exists
-The raw data is crime records from 2015 to 2019 from Chicago Data Portal. Due to the dataset missing some factors after 2019, I choose data from these 5 years. Thus the dataset has a total of 1303648 records and contains descriptive information on the primary type of crime, description of the crime, location description of the crime, and the community, time, district, and other police information.
+The raw data used in this project consists of crime records from 2015 to 2019 obtained from the Chicago Data Portal. With a total of 1303648 records, the dataset provides detailed information on the primary type of crime, the crime's description, its location, and other relevant police information, such as community, time, district, and more.
 
-The second dataset is the Chicago neighborhood dataset, which includes the names, numbers, and geographic boundaries of 77 communities. Based on the dataset, I preprocessed the data using the read_json read files from API and merged them using the concat function. Next, the formatting was done to adjust the formatting for date and time, numeric variables, and categorical variables. Afterward, relevant features were added to the dataset using merge, including community information and socioeconomic information. Finally, crime count by the community, weapon count, month count, week count, arrest index, and domestic index were calculated.
+The second dataset used in this project is the Chicago neighborhood dataset, which contains the names, numbers, and geographic boundaries of 77 communities. To make use of this data, it was preprocessed by reading the JSON files from the API and merging them using the `concat` function. The formatting was then adjusted for date and time, numeric variables, and categorical variables. Additionally, relevant features were added to the dataset using the `merge` function, including community information and socioeconomic information. Finally, several indices were calculated, such as the crime count by community, weapon count, month count, week count, arrest index, and domestic index.
 
-Based on the dataset above, this section is designed to show the basic crime trending in Chicago.
+The dataset was grouped by communities and sorted to create a new dataset of crime events for each community. An interactive choropleth map was created using the `folium` function, displaying the cumulative crime events over 5 years for each community. The map reveals that crime events are generally concentrated in a few communities in the city, particularly on the south side.
 
-
-### Folium Choropleth Map
 <div id="folium-chart-1"></div>
 
-First, the dataset is grouped by communities and sorted to obtain a new dataset of crime events for each community. I use the `folium` function to create an interactive choropleth map showing the community's cumulative crime events over 5 years. As shown in the graph, crime events are generally concentrated in several communities in the city and several communities around the south side.
 
 
 # Community-based Perspective
 
-### Ploty Interactive Charts
+Additionally, the charts provide insight into the most common location and time of occurrence for each type of crime. For example, it appears that theft is most commonly recorded at street locations, while battery and assault are most commonly recorded at residential locations. The charts also show the trend of crime occurrence over time, indicating that crime rates may vary depending on the season and month of the year.
 
-This data set is sorted according to the type of crime, the location, the district number, and the month the crime occurred. 
+In terms of district, it can be seen that some districts have higher crime rates compared to others. For example, some districts may have a higher rate of theft, while others may have a higher rate of battery. By examining the distribution of crime events across the different districts, police departments can allocate resources more effectively to areas with higher crime rates.
 
-`Plotly.express` and `altair` packages have been used here to create corresponding interactive charts. These charts show that theft, battery, criminal damage, assault, other offense, deceptive practice, narcotics, burglary, motor vehicle theft, and robbery topped the list of crimes with criminal records. 
+In conclusion, the exploratory analysis provides valuable insights into the nature of crime in Chicago. By visualizing the crime data, it becomes easier to identify patterns, trends, and relationships between different variables. This information can help police departments make data-driven decisions for crime prevention and reduction efforts.
+
 
 - Crime Count
+`Plotly.express` and `altair` packages have been used here to create corresponding interactive charts. These charts show that theft, battery, criminal damage, assault, other offense, deceptive practice, narcotics, burglary, motor vehicle theft, and robbery topped the list of crimes with criminal records. 
 
 <div id="px-chart-1"></div>
 
+
 - Crime Location
 
-Crime rates were similar indoors and outdoors. Streets were the most frequent areas, followed by residences and apartments.
+The data visualization also provides insight into the relationship between crime and location. Crime rates were similar indoors and outdoors. Streets were the most frequent areas, followed by residences and apartments.
 <div id="px-chart-2"></div>
 
 - Community
 
-Comparing the different types of crime in different communities shows the distribution and frequency of crime incidents in each community. It can be seen that theft, battery, robbery, and narcotics are widely distributed in each community.
+Comparing the different types of crime in different communities shows the distribution and frequency of crime incidents in each community. It can be seen that theft, battery, robbery, and narcotics are widely distributed in each community. 
 <div id="px-chart-3"></div>
 
 - Time Series
-
 Furthermore, the time series allows us to know the trend of crime occurrence. As can be seen from the following plot, crime is not a cumulative or increasing-decreasing phenomenon. It is a continuous, cyclical, extensive, and random process. 
 
-From this, we can see a regular correlation between crime occurrence and months, with May to October having a higher frequency than other months, especially in the summer months (July and August) as the period with high incidences of cases. It shows that the weather (temperature, precipitation, cold) is also a critical factor in crime incidents.
+From this, we can see a regular correlation between crime occurrence and months, with May to October having a higher frequency than other months, especially in the summer months (July and August) as the period with high incidences of cases. It shows that the weather (temperature, precipitation, cold) is also a critical factor in crime incidents. This could be because people tend to be out more and socializing during these time, which can create opportunities for criminal activities.
 <div id="px-chart-4"></div>
 
 
@@ -99,8 +98,10 @@ However, when it comes to community security, some communities have been experie
 
 - Time Heatmap | By Hour
 
-In the hour heatmap, we know that among the 24 hours a day, some crimes are concentrated in the daytime, such as offenses involving children, some crimes are concentrated in the night, such as criminal sexual assault, and some are high in frequency 24 hours a day.
+Similarly, the day of the week heatmap allows us to understand the crime trend over the week. The chart shows that crimes are more likely to occur in the daytime, such as offenses involving children. some crimes are more likely to occur in the night, especially criminal sexual assault. This information is valuable for both the police and the community, as they can prepare accordingly.
 <div id="heatmap-3"></div>
+
+In conclusion, the data visualization provides a comprehensive understanding of the crime trends in Chicago, including the type, location, district, community, and time of crime occurrence. This information can be used to enhance community safety, allocate resources effectively, and design efficient and effective crime prevention strategies.
 
 # Crime Spatial Patterns
 
