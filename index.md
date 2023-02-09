@@ -14,6 +14,8 @@ folium-loader:
   px-chart-2: ["charts/chart_crime_location.html", "400"]
   px-chart-3: ["charts/chart_crimes_community.html", "950"]
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
+  px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
+  px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
   
 
 toc: true 
@@ -76,9 +78,13 @@ Furthermore, the time series allows us to know the trend of crime occurrence. As
 From this, we can see a regular correlation between crime occurrence and months, with May to October having a higher frequency than other months, especially in the summer months (July and August) as the period with high incidences of cases. It shows that the weather (temperature, precipitation, cold) is also a critical factor in crime incidents. This could be because people tend to be out more and socializing during these time, which can create opportunities for criminal activities.
 <div id="px-chart-4"></div>
 
+Some crimes have a 100% arrest rate, and we should be concerned about which crimes have lower arrest rates, such as burglary, kidnapping, robbery, criminal sexual assault, and theft, which can become hidden dangers.
+<div id="px-chart-5"></div>
+
+<div id="px-chart-6"></div>
+
 
 ### Heatmap
-
 
 A total of 31 Chicago districts are represented in this dataset. Based on the districts heatmap, we can identify the number of specific types of crimes that have occurred in various districts in the last five years. The darker the color, the lower the number of crimes, which shows that some crimes, such as assault, burglary, motor vehicle theft, narcotics, theft, and criminal damage, have a high frequency in all districts. 
 
