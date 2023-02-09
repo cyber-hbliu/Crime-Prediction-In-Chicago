@@ -102,6 +102,10 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 ---
 # Crime Spatial Patterns
 
+Different types of crime are being distributed unevenly across the complex landscape of modern cities. In this section, the hex grid map helps us to understand the distribution of crime events in each community by showing the density of crime events. By visualizing the clustering results, we can identify the communities with high crime rates and understand which types of crimes are more frequently occurring in these communities. The KNN analysis, on the other hand, helps us understand the relationship between crime and amenities. 
+
+By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
+
 ---
 # A New Predictive Try
 
