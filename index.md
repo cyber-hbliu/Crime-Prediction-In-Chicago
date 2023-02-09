@@ -5,7 +5,7 @@ altair-loader:
 hv-loader:
   hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
 folium-loader:
-  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
+  folium-chart-1: ["charts/folium_choropleth_community_crimes.html", "400"] # second argument is the desired height
   folium-chart-2: ["charts/percent_no_internet.html", "400"] # second argument is the desired height
 ---
 
@@ -27,15 +27,27 @@ This project is divided into five parts.
 - **Part 5** - Evaluation: validate errors and examine the performance of the model
 
 
-# Part 1 - What Exactly Exists
+# What Exactly Exists
+The raw data is crime records from 2015 to 2019 from Chicago Data Portal. Due to the dataset missing some factors after 2019, I choose data from these 5 years. Thus the dataset has a total of 1303648 records and contains descriptive information on the primary type of crime, description of the crime, location description of the crime, and the community, time, district, and other police information.
 
-# Part 2 - Community-based Perspective
+The second dataset is the Chicago neighborhood dataset, which includes the names, numbers, and geographic boundaries of 77 communities. Based on the dataset, I preprocessed the data using the read_json read files from API and merged them using the concat function. Next, the formatting was done to adjust the formatting for date and time, numeric variables, and categorical variables. Afterward, relevant features were added to the dataset using merge, including community information and socioeconomic information. Finally, crime count by the community, weapon count, month count, week count, arrest index, and domestic index were calculated.
 
-# Part 3 - Crime Spatial Patterns
+Based on the dataset above, this section is designed to show the basic crime trending in Chicago.
 
-# Part 4 - A New Predictive Try
 
-# Part 5 - Examine Errors
+### Folium Choropleth Map
+<div id="folium-chart-1"></div>
+
+First, the dataset is grouped by communities and sorted to obtain a new dataset of crime events for each community. I use the `folium` function to create an interactive choropleth map showing the community's cumulative crime events over 5 years. As shown in the graph, crime events are generally concentrated in several communities in the city and several communities around the south side.
+
+
+# Community-based Perspective
+
+# Crime Spatial Patterns
+
+# A New Predictive Try
+
+# Examine Errors
 
 
 Here are some packages used in this project, click [this page](./another-page.html) to check out.
