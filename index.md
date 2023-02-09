@@ -62,33 +62,41 @@ This data set is sorted according to the type of crime, the location, the distri
 `Plotly.express` and `altair` packages have been used here to create corresponding interactive charts. These charts show that theft, battery, criminal damage, assault, other offense, deceptive practice, narcotics, burglary, motor vehicle theft, and robbery topped the list of crimes with criminal records. 
 
 - Crime Count
+
 <div id="px-chart-1"></div>
 
 - Crime Location
+
 Crime rates were similar indoors and outdoors. Streets were the most frequent areas, followed by residences and apartments.
 <div id="px-chart-2"></div>
 
 - Community
+
 Comparing the different types of crime in different communities shows the distribution and frequency of crime incidents in each community. It can be seen that theft, battery, robbery, and narcotics are widely distributed in each community.
 <div id="px-chart-3"></div>
 
 - Time Series
+
 Furthermore, the time series allows us to know the trend of crime occurrence. As can be seen from the following plot, crime is not a cumulative or increasing-decreasing phenomenon. It is a continuous, cyclical, extensive, and random process. 
 <div id="px-chart-4"></div>
 From this, we can see a regular correlation between crime occurrence and months, with May to October having a higher frequency than other months, especially in the summer months (July and August) as the period with high incidences of cases. It shows that the weather (temperature, precipitation, cold) is also a critical factor in crime incidents.
 
 ### Heatmap
+
 - District Heatmap
+
 A total of 31 Chicago districts are represented in this dataset. Based on the districts heatmap, we can identify the number of specific types of crimes that have occurred in various districts in the last five years. The darker the color, the lower the number of crimes, which shows that some crimes, such as assault, burglary, motor vehicle theft, narcotics, theft, and criminal damage, have a high frequency in all districts. 
 <div id="heatmap-1"></div>
 In contrast, obscenity, stalking, kidnapping, intimidation, human trafficking, criminal sexual assault, etc., occur less frequently. Aditionnally, some crimes are concentrated in specific areas, such as prostitution in district 7 and district 11.
 
 - Community Heatmap
+
 However, when it comes to community security, some communities have been experiencing policing problems for these five years. In the community heatmap, we know that these communities, such as Austin, Auburn Gresham, Loop, Near North Side, Near West Side, North Lawndale, Roseland, South Shore, West Englewood, and West Town, all have a high crime rate. These communities may have some security problems.
 - Community Heatmap - By Month
 <div id="heatmap-2"></div>
 
 - Time Heatmap
+
 In the hour heatmap, we know that among the 24 hours a day, some crimes are concentrated in the daytime, such as offenses involving children, some crimes are concentrated in the night, such as criminal sexual assault, and some are high in frequency 24 hours a day.
 - Hour Heatmap - By Hour
 <div id="heatmap-3"></div>
