@@ -50,7 +50,7 @@ The dataset was grouped by communities and sorted to create a new dataset of cri
 
 
 
-# Community-based Perspective
+# Community-based Perspective |
 
 Additionally, the charts provide insight into the most common location and time of occurrence for each type of crime. For example, it appears that theft is most commonly recorded at street locations, while battery and assault are most commonly recorded at residential locations. The charts also show the trend of crime occurrence over time, indicating that crime rates may vary depending on the season and month of the year.
 
@@ -58,45 +58,31 @@ In terms of district, it can be seen that some districts have higher crime rates
 
 In conclusion, the exploratory analysis provides valuable insights into the nature of crime in Chicago. By visualizing the crime data, it becomes easier to identify patterns, trends, and relationships between different variables. This information can help police departments make data-driven decisions for crime prevention and reduction efforts.
 
-
-- Crime Count
 `Plotly.express` and `altair` packages have been used here to create corresponding interactive charts. These charts show that theft, battery, criminal damage, assault, other offense, deceptive practice, narcotics, burglary, motor vehicle theft, and robbery topped the list of crimes with criminal records. 
 
 <div id="px-chart-1"></div>
 
-
-- Crime Location
-
 The data visualization also provides insight into the relationship between crime and location. Crime rates were similar indoors and outdoors. Streets were the most frequent areas, followed by residences and apartments.
 <div id="px-chart-2"></div>
-
-- Community
 
 Comparing the different types of crime in different communities shows the distribution and frequency of crime incidents in each community. It can be seen that theft, battery, robbery, and narcotics are widely distributed in each community. 
 <div id="px-chart-3"></div>
 
-- Time Series
 Furthermore, the time series allows us to know the trend of crime occurrence. As can be seen from the following plot, crime is not a cumulative or increasing-decreasing phenomenon. It is a continuous, cyclical, extensive, and random process. 
 
 From this, we can see a regular correlation between crime occurrence and months, with May to October having a higher frequency than other months, especially in the summer months (July and August) as the period with high incidences of cases. It shows that the weather (temperature, precipitation, cold) is also a critical factor in crime incidents. This could be because people tend to be out more and socializing during these time, which can create opportunities for criminal activities.
 <div id="px-chart-4"></div>
 
 
-### Heatmap
-
-- District Heatmap
+### Heatmap |
 
 A total of 31 Chicago districts are represented in this dataset. Based on the districts heatmap, we can identify the number of specific types of crimes that have occurred in various districts in the last five years. The darker the color, the lower the number of crimes, which shows that some crimes, such as assault, burglary, motor vehicle theft, narcotics, theft, and criminal damage, have a high frequency in all districts. 
-<div id="heatmap-1"></div>
-In contrast, obscenity, stalking, kidnapping, intimidation, human trafficking, criminal sexual assault, etc., occur less frequently. Aditionnally, some crimes are concentrated in specific areas, such as prostitution in district 7 and district 11.
 
-- Community Heatmap | By Month
+In contrast, obscenity, stalking, kidnapping, intimidation, human trafficking, criminal sexual assault, etc., occur less frequently. Aditionnally, some crimes are concentrated in specific areas, such as prostitution in district 7 and district 11.
+<div id="heatmap-1"></div>
 
 However, when it comes to community security, some communities have been experiencing policing problems for these five years. In the community heatmap, we know that these communities, such as Austin, Auburn Gresham, Loop, Near North Side, Near West Side, North Lawndale, Roseland, South Shore, West Englewood, and West Town, all have a high crime rate. These communities may have some security problems.
-- Community Heatmap 
 <div id="heatmap-2"></div>
-
-- Time Heatmap | By Hour
 
 Similarly, the day of the week heatmap allows us to understand the crime trend over the week. The chart shows that crimes are more likely to occur in the daytime, such as offenses involving children. some crimes are more likely to occur in the night, especially criminal sexual assault. This information is valuable for both the police and the community, as they can prepare accordingly.
 <div id="heatmap-3"></div>
