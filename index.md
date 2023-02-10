@@ -104,6 +104,8 @@ On the other hand, KDEs are a popular tool for analyzing data distributions. In 
 
 ![density_of_different_crimes](https://github.com/cyber-hbliu/Crime-Prediction-In-Chicago/blob/032fbfe0c5266294f7a57daa75d4d08406113344/assets/img/density_of_different_crimes.png)
 
+[llll](https://github.com/cyber-hbliu/Crime-Prediction-In-Chicago/blob/ad0d889d748b3e412d4ad7635dfd37f0133908ef/assets/img/Crime%20Count%20Spatial%20Distribution.png)
+
 The `KNN` analysis helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
 
 
