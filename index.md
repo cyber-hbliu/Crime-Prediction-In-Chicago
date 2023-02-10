@@ -58,7 +58,6 @@ The dataset was grouped by communities and sorted to create a new dataset of cri
 
 ### Plotly Charts
 
-
 Additionally, the charts provide insight into the most common location and time of occurrence for each type of crime. For example, it appears that theft is most commonly recorded at street locations, while battery and assault are most commonly recorded at residential locations. The charts also show the trend of crime occurrence over time, indicating that crime rates may vary depending on the season and month of the year.
 
 In terms of district, it can be seen that some districts have higher crime rates compared to others. For example, some districts may have a higher rate of theft, while others may have a higher rate of battery. By examining the distribution of crime events across the different districts, police departments can allocate resources more effectively to areas with higher crime rates.
@@ -102,9 +101,12 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 ---
 # Crime Spatial Patterns
 
-Different types of crime are being distributed unevenly across the complex landscape of modern cities. In this section, the hex grid map helps us to understand the distribution of crime events in each community by showing the density of crime events. By visualizing the clustering results, we can identify the communities with high crime rates and understand which types of crimes are more frequently occurring in these communities. The KNN analysis, on the other hand, helps us understand the relationship between crime and amenities. 
+Different types of crime are being distributed unevenly across the complex landscape of modern cities. In this section, the hex grid map helps us to understand the distribution of crime events in each community by showing the density of crime events. The `KMeans` clustering algorithm is used to group crime events into different clusters based on their location. This allows us to identify areas with high or low crime concentrations. By visualizing the crime locations in hexgrid maps, we can see the spatial distribution of crime events in the city. 
 
-By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
+The `KNN` analysis, on the other hand, helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
+
+![density_of_different_crimes]({{ site.url }}{{ site.baseurl }}assets/img/density_of_different_crimes.png)
+
 
 ---
 # A New Predictive Try
