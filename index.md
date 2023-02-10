@@ -5,7 +5,7 @@ altair-loader:
   heatmap-1: "charts/heatmap_district.json"
   heatmap-2: "charts/heatmap_time.json"
   heatmap-3: "charts/heatmap_hour.json"
-  png-1:"assets/img/density_of_different_crimes.png"
+  png-1: "assets/img/density_of_different_crimes.png"
 hv-loader:
   hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
 folium-loader:
