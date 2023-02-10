@@ -5,6 +5,7 @@ altair-loader:
   heatmap-1: "charts/heatmap_district.json"
   heatmap-2: "charts/heatmap_time.json"
   heatmap-3: "charts/heatmap_hour.json"
+  png-1:"assets/img/density_of_different_crimes.png"
 hv-loader:
   hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
 folium-loader:
@@ -16,11 +17,7 @@ folium-loader:
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
   px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
-  
-
-toc: true 
-read_time: true
-toc_sticky: true
+ 
 ---
 
 # Introduction
@@ -101,11 +98,14 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 ---
 # Crime Spatial Patterns
 
-Different types of crime are being distributed unevenly across the complex landscape of modern cities. In this section, the hex grid map helps us to understand the distribution of crime events in each community by showing the density of crime events. The `KMeans` clustering algorithm is used to group crime events into different clusters based on their location. This allows us to identify areas with high or low crime concentrations. By visualizing the crime locations in hexgrid maps, we can see the spatial distribution of crime events in the city. 
+Different types of crime are being distributed unevenly across the complex landscape of modern cities. 
 
-The `KNN` analysis, on the other hand, helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
+On the other hand, KDEs are a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. It is worth mentioning that the KDE gives an unequivocal demonstration of the spatial distribution. We can see that while theft occurs widely throughout the city, it is most concentrated in downtown areas, while narcotics are concentrated in the area on the west side of downtown. For the rest of the several crimes, different peaks can be seen scattered in several city areas.
 
-![density_of_different_crimes]({{ site.url }}{{ site.baseurl }}assets/img/density_of_different_crimes.png)
+
+<div id="png-1"></div>
+
+The `KNN` analysis helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
 
 
 ---
