@@ -16,7 +16,8 @@ folium-loader:
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
   px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
-  png-1: ["assets/img/density_of_different_crimes.png", "600"]
+  png-1: ["assets/img/density_of_different_crimes.png"]
+  png-2: ["assets/img/spatial_cluster_analysis.png"]
   
  
 ---
@@ -99,14 +100,17 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 ---
 # Crime Spatial Patterns
 
-Different types of crime are being distributed unevenly across the complex landscape of modern cities. 
+Different types of crime are being distributed unevenly across the complex landscape of modern cities. KDEs are a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. 
 
-On the other hand, KDEs are a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. It is worth mentioning that the KDE gives an unequivocal demonstration of the spatial distribution. We can see that while theft occurs widely throughout the city, it is most concentrated in downtown areas, while narcotics are concentrated in the area on the west side of downtown. For the rest of the several crimes, different peaks can be seen scattered in several city areas.
+It is worth mentioning that the KDE gives an unequivocal demonstration of the spatial distribution. We can see that while theft occurs widely throughout the city, it is most concentrated in downtown areas, while narcotics are concentrated in the area on the west side of downtown. For the rest of the several crimes, different peaks can be seen scattered in several city areas.
 
 <div id="png-1"></div>
 
 The `KNN` analysis helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
 
+The result is that cluster-0 includes 31 communities with an average crime incident of 10043, cluster-1 includes 17 communities with an average crime incident of 30559, cluster-2 includes 5 communities with an average crime incident of 42966, cluster-3 includes 1 community with an average crime incident of 77134, cluster-4 includes 23 communities with an average crime incident of 7862. Last but not least, the hexagonal grid map shows the clusters in more detailly. Using the h3fy function from the tobler.util module can easily generate a hexgrids covering the face of the Chicago City.
+
+<div id="png-2"></div>
 
 ---
 # A New Predictive Try
