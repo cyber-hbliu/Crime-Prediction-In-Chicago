@@ -16,8 +16,8 @@ folium-loader:
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
   px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
-  png-1: ["assets/img/density_of_different_crimes.png"]
-  png-2: ["assets/img/spatial_cluster_analysis.png"]
+  png-1: ["assets/img/density_of_different_crimes.png",500]
+  png-2: ["assets/img/spatial_cluster_analysis.png",500]
   
  
 ---
