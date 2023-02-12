@@ -8,7 +8,7 @@ altair-loader:
 hv-loader:
   hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
 folium-loader:
-  folium-chart-1: ["charts/folium_choropleth_community_crimes.html", "900"] # second argument is the desired height
+  folium-chart-1: ["charts/folium_choropleth_community_crimes.html", "600"] # second argument is the desired height
   folium-chart-2: ["charts/percent_no_internet.html", "400"] # second argument is the desired height
   px-chart-1: ["charts/chart_crime_count.html", "500"]
   px-chart-2: ["charts/chart_crime_location.html", "400"]
