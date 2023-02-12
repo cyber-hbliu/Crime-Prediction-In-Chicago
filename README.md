@@ -1,6 +1,6 @@
 # INTRODUCTION - Chicago Crime Rate Prediction
 
-This is my final project for MUSA 550(Geospatial Data Science in Python). In this project, I am trying to build a predictive model based on the previous crime records in Chicago. Click this [link](https://shevilovia.github.io/Crime-Prediction-In-Chicago/) to know more details about the project.
+This is my final project for MUSA 550(Geospatial Data Science in Python). In this project, I am trying to build a predictive model based on the previous crime records in Chicago. Click this [link](https://cyber-hbliu.github.io/Crime-Prediction-In-Chicago/) to know more details about the project.
 
 ## Background
 Chicago is a city with rich history and cultural heritage. However, the city is also encroached upon by crime. Social security is a constant problem that affects the lives of its citizens. Understanding crime, predicting it, and preventing it have become something that police departments want to do. As in the movie Minority Report, a "prophet" predicts crimes before they happen. Nevertheless, reality is not a science fiction movie, and Crime prediction is a complex problem because many random human factors are involved. The specifics of how crime is committed vary depending on the type of society and community.
