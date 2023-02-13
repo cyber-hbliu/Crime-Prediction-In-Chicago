@@ -16,8 +16,9 @@ folium-loader:
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
   px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
-  png-1: ["assets/img/density_of_different_crimes.png",500]
+  png-1: ["assets/img/density_of_different_crimes.png",700]
   png-2: ["assets/img/spatial_cluster_analysis.png",500]
+  png-3: ["assets/img/spatial_cluster_analysis.png",500]
   
  
 ---
@@ -111,6 +112,21 @@ The `KNN` analysis helps us understand the relationship between crime and amenit
 The result is that cluster-0 includes 31 communities with an average crime incident of 10043, cluster-1 includes 17 communities with an average crime incident of 30559, cluster-2 includes 5 communities with an average crime incident of 42966, cluster-3 includes 1 community with an average crime incident of 77134, cluster-4 includes 23 communities with an average crime incident of 7862. Last but not least, the hexagonal grid map shows the clusters in more detailly. Using the h3fy function from the tobler.util module can easily generate a hexgrids covering the face of the Chicago City.
 
 <div id="png-2"></div>
+
+Some features would help predict the crime rate, such as the proximity to depository places, bars, pubs, and liquor retailers, and the location near commercials place, universities, schools, landmarks, shot spotter alerts, or subway stations. Moreover, the crime probably happened in abandoned buildings and vehicles in some areas. Likewise, some socioeconomic features, such as the economic hardship index, can be critical factors in community development and security issues. Specifically, there are some factors related to the
+number of crimes:
+
+1. Depository locations
+2. Abandon buildings
+3. Schools
+4. Grocery stores
+5. Subway stations
+6. Retails and commercials
+7. Landmarks
+8. ShotSpotter alerts
+
+In addition, the sklearn.neighbors.NearestNeighbors provides a regression for data with continuous labels. It identifies the nearest neighbors of a given query point, and the commonly used distance metric is the Euclidean distance. In this project, the nearest neighbors places of crime occurrence are found. The value of k varies according to different places, for instance, 5 nearest depository locations, 5 nearest abandoned buildings, 3 nearest schools, 3 nearest grocery stores, 5 nearest subway stations, 5 nearest shopping areas, 2 nearest landmarks, and 3 nearest shot spotter alerts. The darker the color, the farther the distance. These maps show that depository locations and subway stations are concentrated in the city, and abandoned buildings are concentrated on the city's west side and some areas in the middle of the city. Schools are located throughout the city, while grocery stores, retail, and commercials are concentrated in some neighborhoods.
+
 
 ---
 # A New Predictive Try
