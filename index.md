@@ -1,15 +1,12 @@
 ---
 layout: default
 altair-loader:
-  altair-chart-1: "charts/measlesAltair.json"
   heatmap-1: "charts/heatmap_district.json"
   heatmap-2: "charts/heatmap_time.json"
   heatmap-3: "charts/heatmap_hour.json"
 hv-loader:
-  hv-chart-1: ["charts/measlesHvplot.html", "500"] # second argument is the desired height
 folium-loader:
   folium-chart-1: ["charts/folium_choropleth_community_crimes.html", "600"] # second argument is the desired height
-  folium-chart-2: ["charts/percent_no_internet.html", "400"] # second argument is the desired height
   px-chart-1: ["charts/chart_crime_count.html", "500"]
   px-chart-2: ["charts/chart_crime_location.html", "400"]
   px-chart-3: ["charts/chart_crimes_community.html", "950"]
