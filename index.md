@@ -20,6 +20,7 @@ folium-loader:
   png-2: ["assets/img/spatial_cluster_analysis.png",400]
   png-3: ["assets/img/hexgrids_nn.png",1000]
   png-4: ["assets/img/hexgrids_features.png",800]
+  png-5: ["assets/img/correlation_matrix.png",600]
   
  
 ---
@@ -101,15 +102,14 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 
 ---
 # Crime Spatial Patterns
-
+### Density
 Different types of crime are being distributed unevenly across the complex landscape of modern cities. KDEs are a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. 
 
 It is worth mentioning that the KDE gives an unequivocal demonstration of the spatial distribution. We can see that while theft occurs widely throughout the city, it is most concentrated in downtown areas, while narcotics are concentrated in the area on the west side of downtown. For the rest of the several crimes, different peaks can be seen scattered in several city areas.
 
 <div id="png-1"></div>
 
-The `KNN` analysis helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns. For example, areas with higher levels of access to amenities such as shops, schools, and community centers, may have lower crime rates, while areas with low levels of access may have higher crime rates. By analyzing the distance between crime locations and amenity locations, we can determine which types of amenities are more related to the crime and what factors contribute to the crime.
-
+### Clustering
 The result is that cluster-0 includes 31 communities with an average crime incident of 10043, cluster-1 includes 17 communities with an average crime incident of 30559, cluster-2 includes 5 communities with an average crime incident of 42966, cluster-3 includes 1 community with an average crime incident of 77134, cluster-4 includes 23 communities with an average crime incident of 7862. Last but not least, the hexagonal grid map shows the clusters in more detailly. Using the h3fy function from the tobler.util module can easily generate a hexgrids covering the face of the Chicago City.
 
 <div id="png-2"></div>
@@ -126,18 +126,33 @@ number of crimes:
 7. Landmarks
 8. ShotSpotter alerts
 
-In addition, the sklearn.neighbors.NearestNeighbors provides a regression for data with continuous labels. It identifies the nearest neighbors of a given query point, and the commonly used distance metric is the Euclidean distance. In this project, the nearest neighbors places of crime occurrence are found. The value of k varies according to different places, for instance, 5 nearest depository locations, 5 nearest abandoned buildings, 3 nearest schools, 3 nearest grocery stores, 5 nearest subway stations, 5 nearest shopping areas, 2 nearest landmarks, and 3 nearest shot spotter alerts. The darker the color, the farther the distance. These maps show that depository locations and subway stations are concentrated in the city, and abandoned buildings are concentrated on the city's west side and some areas in the middle of the city. Schools are located throughout the city, while grocery stores, retail, and commercials are concentrated in some neighborhoods.
+### Nearest Neighbors
+In addition, the sklearn.neighbors.NearestNeighbors provides a regression for data with continuous labels. It identifies the nearest neighbors of a given query point, and the commonly used distance metric is the Euclidean distance. 
+
+In this project, the nearest neighbors places of crime occurrence are found. The value of k varies according to different places, for instance, 5 nearest depository locations, 5 nearest abandoned buildings, 3 nearest schools, 3 nearest grocery stores, 5 nearest subway stations, 5 nearest shopping areas, 2 nearest landmarks, and 3 nearest shot spotter alerts. The darker the color, the farther the distance. These maps show that depository locations and subway stations are concentrated in the city, and abandoned buildings are concentrated on the city's west side and some areas in the middle of the city. Schools are located throughout the city, while grocery stores, retail, and commercials are concentrated in some neighborhoods. 
+
+The `KNN` analysis helps us understand the relationship between crime and amenities. It is used to calculate the log-transformed distance between crime locations and amenity locations. This information can be used to identify areas with high or low levels of access to amenities, which can impact crime patterns.
 
 <div id="png-3"></div>
 
-Based on the dataset, I calculated several indexes, including crime rate, risk rate of people under 18 or over 64, domestic violence rate, and weapon rate. Some socioeconomic features like percent of housing crowded and the hardship index are also presented in hexagon grid maps. The darker the color, the higher the value. These maps show that the crime rate is concentrated in areas with a high incidence of crime because the number of crimes is used by the population to calculate. When I look at the remaining four indicators, I see that the Hardship index and the weapon rate have very similar spatial distribution characteristics. Meanwhile, percent of housing crowded and the domestic violence rate show complementary spatial distributions. Perhaps in further improvement, I should do some correlation analysis.
-
+### Hexagon Grid
+Based on the dataset, I calculated several indexes, including crime rate, risk rate of people under 18 or over 64, domestic violence rate, and weapon rate. Some socioeconomic features like percent of housing crowded and the hardship index are also presented in hexagon grid maps. The darker the color, the higher the value. These maps show that the crime rate is concentrated in areas with a high incidence of crime because the number of crimes is used by the population to calculate. When I look at the remaining four indicators, I see that the Hardship index and the weapon rate have very similar spatial distribution characteristics. Meanwhile, percent of housing crowded and the domestic violence rate shows complementary spatial distributions. Perhaps in further improvement, I should do some correlation analysis.
 <div id="png-4"></div>
 
+### Correlation Matrix
 Following, I show the correlation matrix using a heatmap, which is a matrix that shows the correlation coefficients of different variables. The correlation coefficient is between -1 and 1, with 0 indicating no linear correlation between the two variables. The farther the correlation coefficient is from zero, the stronger the relationship between the two variables. Also the relationship can be positive or negative.
+<div id="png-5"></div>
 
 ---
 # A New Predictive Try
+### Model
+In this section, the aim is to build a Random Forest regression model to analyze the crime risk factors influencing the number of random crimes. This is achieved by dividing the data into training and testing sets, and using the training set to fit the model and optimize its parameters. The dataset is split into two parts, with 70% of the data constituting the training set and 30% the test set, utilizing the `sklearn.model_selection.train_test_split` method. The data is then transformed and processed using the `sklearn.compose.ColumnTransformer` and `sklearn.pipeline.make_pipeline`functions.
+
+A random forest is a meta-estimator that fits several classifying decision trees on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. Once the model has been trained on previous crime data in Chicago, including factors identified in feature engineering, it can be tested on the testing set to evaluate its performance. The `sklearn.model_selection.GridSearchCV` method is used to perform a search over specified parameter values for the estimator, resulting in a score of 0.5439, indicating the fitness of the model. 
+
+### Importance
+Feature importance are provided by the fitted attribute `feature_importances_` and they are computed as the mean and standard deviation of accumulation of the impurity decrease within each tree. Finally, a bar chart will be generated, which shows the use of a forest of trees to evaluate the importance of features. The added features, such as several values measured by KNN, are of high importance.
+
 
 ---
 # Examine Errors
