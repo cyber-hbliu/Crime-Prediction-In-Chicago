@@ -18,7 +18,7 @@ folium-loader:
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
   png-1: ["assets/img/density_of_different_crimes.png",700]
   png-2: ["assets/img/spatial_cluster_analysis.png",500]
-  png-3: ["assets/img/spatial_cluster_analysis.png",500]
+  png-3: ["assets/img/hexgrids_nn.png",800]
   
  
 ---
@@ -127,6 +127,7 @@ number of crimes:
 
 In addition, the sklearn.neighbors.NearestNeighbors provides a regression for data with continuous labels. It identifies the nearest neighbors of a given query point, and the commonly used distance metric is the Euclidean distance. In this project, the nearest neighbors places of crime occurrence are found. The value of k varies according to different places, for instance, 5 nearest depository locations, 5 nearest abandoned buildings, 3 nearest schools, 3 nearest grocery stores, 5 nearest subway stations, 5 nearest shopping areas, 2 nearest landmarks, and 3 nearest shot spotter alerts. The darker the color, the farther the distance. These maps show that depository locations and subway stations are concentrated in the city, and abandoned buildings are concentrated on the city's west side and some areas in the middle of the city. Schools are located throughout the city, while grocery stores, retail, and commercials are concentrated in some neighborhoods.
 
+<div id="png-3"></div>
 
 ---
 # A New Predictive Try
