@@ -16,9 +16,10 @@ folium-loader:
   px-chart-4: ["charts/chart_histogram_of_crimes_by_month.html", "300"]
   px-chart-5: ["charts/chart_domestic_violence_rate.html", "400"]
   px-chart-6: ["charts/chart_crime_arrest_rate.html", "400"]
-  png-1: ["assets/img/density_of_different_crimes.png",700]
-  png-2: ["assets/img/spatial_cluster_analysis.png",500]
-  png-3: ["assets/img/hexgrids_nn.png",800]
+  png-1: ["assets/img/density_of_different_crimes.png",600]
+  png-2: ["assets/img/spatial_cluster_analysis.png",400]
+  png-3: ["assets/img/hexgrids_nn.png",1000]
+  png-4: ["assets/img/hexgrids_features.png",600]
   
  
 ---
@@ -128,6 +129,10 @@ number of crimes:
 In addition, the sklearn.neighbors.NearestNeighbors provides a regression for data with continuous labels. It identifies the nearest neighbors of a given query point, and the commonly used distance metric is the Euclidean distance. In this project, the nearest neighbors places of crime occurrence are found. The value of k varies according to different places, for instance, 5 nearest depository locations, 5 nearest abandoned buildings, 3 nearest schools, 3 nearest grocery stores, 5 nearest subway stations, 5 nearest shopping areas, 2 nearest landmarks, and 3 nearest shot spotter alerts. The darker the color, the farther the distance. These maps show that depository locations and subway stations are concentrated in the city, and abandoned buildings are concentrated on the city's west side and some areas in the middle of the city. Schools are located throughout the city, while grocery stores, retail, and commercials are concentrated in some neighborhoods.
 
 <div id="png-3"></div>
+
+Based on the dataset, I calculated several indexes, including crime rate, risk rate of people under 18 or over 64, domestic violence rate, and weapon rate. Some socioeconomic features like percent of housing crowded and the hardship index are also presented in hexagon grid maps. The darker the color, the higher the value. These maps show that the crime rate is concentrated in areas with a high incidence of crime because the number of crimes is used by the population to calculate. When I look at the remaining four indicators, I see that the Hardship index and the weapon rate have very similar spatial distribution characteristics. Meanwhile, percent of housing crowded and the domestic violence rate show complementary spatial distributions. Perhaps in further improvement, I should do some correlation analysis.
+
+<div id="png-4"></div>
 
 ---
 # A New Predictive Try
