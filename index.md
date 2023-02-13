@@ -19,7 +19,7 @@ folium-loader:
   png-4: ["assets/img/hexgrids_features.png",800]
   png-5: ["assets/img/hexgrids_MAE.png",600]
   px-chart-7: ["charts/importance.html", "400"]
-  px-chart-8: ["charts/correlation_matrix.html", "480"]
+  px-chart-8: ["charts/correlation_matrix.html", "350"]
   
   
  
