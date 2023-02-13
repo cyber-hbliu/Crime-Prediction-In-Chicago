@@ -20,7 +20,10 @@ folium-loader:
   png-2: ["assets/img/spatial_cluster_analysis.png",400]
   png-3: ["assets/img/hexgrids_nn.png",1000]
   png-4: ["assets/img/hexgrids_features.png",800]
-  png-5: ["assets/img/correlation_matrix.png",600]
+  png-5: ["assets/img/hexgrids_MAE.png",600]
+  px-chart-7: ["charts/importance.html", "400"]
+  px-chart-8: ["charts/correlation_matrix.html", "600"]
+  
   
  
 ---
@@ -42,12 +45,14 @@ The project is broken down into five parts:
 4. `Predictive Modeling` of Crime Count: This section focuses on predicting the crime rate of the city.
 5. `Evaluation`: In this final stage, the performance of the model will be evaluated and errors will be validated.
 
+Click [here](./another-page.html). to see packages used in this project
+
 ---
 
 # What Exactly Exists
-The raw data used in this project consists of crime records from 2015 to 2019 obtained from the Chicago Data Portal. With a total of 1303648 records, the dataset provides detailed information on the primary type of crime, the crime's description, its location, and other relevant police information, such as community, time, district, and more.
+The raw data used in this project consists of crime records from 2015 to 2019 obtained from the [Chicago Data Portal](https://data.cityofchicago.org/). With a total of 1303648 records, the dataset provides detailed information on the primary type of crime, the crime's description, its location, and other relevant police information, such as community, time, district, and more.
 
-The second dataset used in this project is the Chicago neighborhood dataset, which contains the names, numbers, and geographic boundaries of 77 communities. To make use of this data, it was preprocessed by reading the JSON files from the API and merging them using the `concat` function. The formatting was then adjusted for date and time, numeric variables, and categorical variables. Additionally, relevant features were added to the dataset using the `merge` function, including community information and socioeconomic information. Finally, several indices were calculated, such as the crime count by community, weapon count, month count, week count, arrest index, and domestic index.
+The second dataset used in this project is the [Chicago neighborhood](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9) dataset, which contains the names, numbers, and geographic boundaries of 77 communities. To make use of this data, it was preprocessed by reading the JSON files from the API and merging them using the `concat` function. The formatting was then adjusted for date and time, numeric variables, and categorical variables. Additionally, relevant features were added to the dataset using the `merge` function, including community information and socioeconomic information. Finally, several indices were calculated, such as the crime count by community, weapon count, month count, week count, arrest index, and domestic index.
 
 The dataset was grouped by communities and sorted to create a new dataset of crime events for each community. An interactive choropleth map was created using the `folium` function, displaying the cumulative crime events over 5 years for each community. The map reveals that crime events are generally concentrated in a few communities in the city, particularly on the south side.
 
@@ -141,7 +146,7 @@ Based on the dataset, I calculated several indexes, including crime rate, risk r
 
 ### Correlation Matrix
 Following, I show the correlation matrix using a heatmap, which is a matrix that shows the correlation coefficients of different variables. The correlation coefficient is between -1 and 1, with 0 indicating no linear correlation between the two variables. The farther the correlation coefficient is from zero, the stronger the relationship between the two variables. Also the relationship can be positive or negative.
-<div id="png-5"></div>
+<div id="px-chart-8"></div>
 
 ---
 # A New Predictive Try
@@ -152,59 +157,22 @@ A random forest is a meta-estimator that fits several classifying decision trees
 
 ### Importance
 Feature importance are provided by the fitted attribute `feature_importances_` and they are computed as the mean and standard deviation of accumulation of the impurity decrease within each tree. Finally, a bar chart will be generated, which shows the use of a forest of trees to evaluate the importance of features. The added features, such as several values measured by KNN, are of high importance.
-
+<div id="px-chart-7"></div>
 
 ---
 # Examine Errors
+### Evaluation
+In this section, I use the predict function to get the predicted value of the crime rate, calculate the predicted value minus the observed value, then divide it by the observed value to get the errors and absolute percent of errors, and MAE. As a result, the MAE is shown on the map as a hexagonal grid. Darker colors indicate more significant errors. The model does not perform well in the areas with higher crime rates, such as downtown areas and the west side of downtown. Furthermore, in the southern region, the MAE decreases.
+<div id="png-5"></div>
 
+### Improvement
+The model only achieved a partial prediction, with a final score of 0.54. Because some dataset was unavailable, adding more features to the original dataset was impossible, such as weather, population, average income, eviction rate, poverty level, and so on. The use of demographics and graffiti is problematic because of the potential to introduce racial and socioeconomic bias and have questionable causal value. A proper combination of urban amenities, weather, socioeconomic, traffic, and crime data can increase the model's fit and yield more accurate crime rate predictions. Moreover, the location of the cases is mostly on the street. Some neighborhoods can be analyzed using osmnx. It is also possible to transform and calculate some factors using correlation.
 
-Here are some packages used in this project, click [this page](./another-page.html) to check out.
-
-# Example: Embedding Altair & Hvplot Charts
-
-This section will show examples of embedding interactive charts produced using [Altair](https://altair-viz.github.io) and [Hvplot](https://hvplot.pyviz.org/).
-
-## Altair Example
-
-Below is a chart of the incidence of measles since 1928 for the 50 US states.
-
-<div id="altair-chart-1"></div>
-
-This was produced using Altair and embedded in this static web page. Note that you can also display Python code on this page:
-
-```python
-import altair as alt
-alt.renderers.enable('notebook')
-```
-
-## HvPlot Example
-
-Lastly, the measles incidence produced using the HvPlot package:
-
-<div id="hv-chart-1"></div>
-
-## Notes
-
-- See the [lecture 13A slides](https://musa-550-fall-2022.github.io/slideslecture-13A.html) for the code that produced these plots.
-
-**Important: When embedding charts, you will likely need to adjust the width/height of the charts before embedding them in the page so they fit nicely when embedded.**
-
-# Example: Embedding Folium charts
-
-This post will show examples of embedding interactive maps produced using [Folium](https://github.com/python-visualization/folium).
-
-## OSMnx and Street Networks
-
-The shortest route between the Art Museum and the Liberty Bell:
-
-<div id="folium-chart-1"></div>
-
-<br/>
-
-## Percentage of Households without Internet
-
-The percentage of households without internet by county:
-
-<div id="folium-chart-2"></div>
-
-See the [lecture 9B slides](https://musa-550-fall-2022.github.io/slides/lecture-9B.html) and the [lecture 10A slides](https://musa-550-fall-2022.github.io/slides/lecture-10A.html) for the code that produced these plots.
+# Reference
+1. *Scikit-learn. Retrieved from https://scikit-learn.org/stable/index.html*
+2. *The dataset of incidents of crime. Retrieved from https://data.cityofchicago.org/Public-Safety/Crimes- 2001-to-Present/ijzp-q8t2
+Lee, J., & King, G. (2022). Predicting crime with machine learning. Proceedings of the National Academy of Sciences, 119(34), 21283-21289. doi:10.1073/pnas.2002575117*
+3. *Rotaru, V., Huang, Y., Li, T. et al. Event-level prediction of urban crime reveals a signature of enforcement bias in US cities. Nat Hum Behav 6, 1056–1068 (2022). https://doi.org/10.1038/s41562-022-01372-0*
+4. *Tamir, Azwad & Watson, Eric & Willett, Brandon & Hasan, Qutaiba & Yuan, Jiann-Shiun. (2021). Crime Prediction and Forecasting using Machine Learning Algorithms. International Journal of Computer Science and Information Technology. 12. 26-33.*
+5. *Shah, N., Bhagat, N. & Shah, M. Crime forecasting: a machine learning and computer vision approach to crime prediction and prevention. Vis. Comput. Ind. Biomed. Art 4, 9 (2021). https://doi.org/10.1186/s42492-021-00075-z*
+6. *S. Kim, P. Joshi, P. S. Kalsi and P. Taheri, "Crime Analysis Through Machine Learning," 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference (IEMCON), 2018, pp. 415-420, doi: 10.1109/IEMCON.2018.8614828.*
