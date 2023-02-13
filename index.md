@@ -105,14 +105,14 @@ In conclusion, the exploratory analysis provides valuable insights into the natu
 ---
 # Crime Spatial Patterns
 ### Density
-Different types of crime are being distributed unevenly across the complex landscape of modern cities. KDEs are a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. 
+Different types of crime are being distributed unevenly across the complex landscape of modern cities. `KDE` is a popular tool for analyzing data distributions. In the kernel density estimate, 9 representative types such as ROBBERY, THEFT, BURGLARY, WEAPONS VIOLATION, NARCOTICS, ASSAULT, HOMICIDE, SEX OFFENSE, and KIDNAPPING are displayed. 
 
 It is worth mentioning that the KDE gives an unequivocal demonstration of the spatial distribution. We can see that while theft occurs widely throughout the city, it is most concentrated in downtown areas, while narcotics are concentrated in the area on the west side of downtown. For the rest of the several crimes, different peaks can be seen scattered in several city areas.
 
 <div id="png-1"></div>
 
 ### Clustering
-The result is that cluster-0 includes 31 communities with an average crime incident of 10043, cluster-1 includes 17 communities with an average crime incident of 30559, cluster-2 includes 5 communities with an average crime incident of 42966, cluster-3 includes 1 community with an average crime incident of 77134, cluster-4 includes 23 communities with an average crime incident of 7862. Last but not least, the hexagonal grid map shows the clusters in more detailly. Using the h3fy function from the tobler.util module can easily generate a hexgrids covering the face of the Chicago City.
+The result is that cluster-0 includes 31 communities with an average crime incident of 10043, cluster-1 includes 17 communities with an average crime incident of 30559, cluster-2 includes 5 communities with an average crime incident of 42966, cluster-3 includes 1 community with an average crime incident of 77134, cluster-4 includes 23 communities with an average crime incident of 7862. Last but not least, the hexagonal grid map shows the clusters in more detailly. Using the `h3fy` function from the tobler.util module can easily generate a hexgrids covering the face of the Chicago City.
 
 <div id="png-2"></div>
 
@@ -142,7 +142,7 @@ Based on the dataset, I calculated several indexes, including crime rate, risk r
 <div id="png-4"></div>
 
 ### Correlation Matrix
-Following, I show the correlation matrix using a heatmap, which is a matrix that shows the correlation coefficients of different variables. The correlation coefficient is between -1 and 1, with 0 indicating no linear correlation between the two variables. The farther the correlation coefficient is from zero, the stronger the relationship between the two variables. Also the relationship can be positive or negative.
+Following, I show the `correlation matrix` using a heatmap, which is a matrix that shows the correlation coefficients of different variables. The correlation coefficient is between -1 and 1, with 0 indicating no linear correlation between the two variables. The farther the correlation coefficient is from zero, the stronger the relationship between the two variables. Also the relationship can be positive or negative.
 <div id="px-chart-8"></div>
 
 ---
@@ -165,6 +165,7 @@ In this section, I use the predict function to get the predicted value of the cr
 ### Improvement
 The model only achieved a partial prediction, with a final score of 0.54. Because some dataset was unavailable, adding more features to the original dataset was impossible, such as weather, population, average income, eviction rate, poverty level, and so on. The use of demographics and graffiti is problematic because of the potential to introduce racial and socioeconomic bias and have questionable causal value. A proper combination of urban amenities, weather, socioeconomic, traffic, and crime data can increase the model's fit and yield more accurate crime rate predictions. Moreover, the location of the cases is mostly on the street. Some neighborhoods can be analyzed using osmnx. It is also possible to transform and calculate some factors using correlation.
 
+---
 # Reference
 1. *Scikit-learn. Retrieved from https://scikit-learn.org/stable/index.html*
 2. *The dataset of incidents of crime. Retrieved from https://data.cityofchicago.org/Public-Safety/Crimes- 2001-to-Present/ijzp-q8t2
